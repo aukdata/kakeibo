@@ -1,12 +1,18 @@
 <template>
-  <v-sheet>
-    <v-tabs v-model="tabs">
-      <v-tab v-for="box in $store.state.boxes" :key="box.id" :href="box.id">
+  <div>
+    <v-tabs
+      v-model="tab"
+    >
+      <v-tab
+        v-for="box in $store.state.boxes"
+        :key="box.id"
+        :to="box.id"
+      >
         {{ box.name }}
       </v-tab>
     </v-tabs>
 
-    <v-tabs-items v-model="tabs">
+    <v-tabs-items v-model="tab">
       <v-tab-item
         v-for="box in $store.state.boxes"
         :key="box.id"
@@ -47,18 +53,24 @@
         </v-container>
       </v-tab-item>
     </v-tabs-items>
-  </v-sheet>
+  </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
+import '../definitions';
 
 @Component
 export default class Transactions extends Vue {
-  tabs = null;
+  tab = this.getTabIndex(this.$route.params.boxId);
   cards = [
     "aaa", "bbb", "ccc"
   ];
+
+  getTabIndex(boxId?: BoxId) {
+    if (!boxId) return 0;
+    return this.$store.state.boxes.findIndex((box: Box) => box.id === boxId);
+  }
 }
 </script>

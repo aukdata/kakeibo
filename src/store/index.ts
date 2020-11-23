@@ -14,7 +14,10 @@ export default new Vuex.Store<AppData>({
       { id: "c4821", name: "食費" },
     ],
     boxes: [
-      { id: "b8748", name: "財布", amount: 30000 },
+      { id: "all", name: "すべて", amount: 30000 },
+      { id: "saifu", name: "財布", amount: 30000 },
+      { id: "yuucho", name: "ゆうちょ口座", amount: 30000 },
+      { id: "daikyo", name: "大協口座", amount: 30000 },
     ],
   },
   mutations: {

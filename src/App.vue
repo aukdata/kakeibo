@@ -12,7 +12,7 @@
       <v-list>
         <v-list-item>
           <v-list-item-title>
-            <router-link to="/transactions">
+            <router-link to="/transactions/all">
               収入・支出
             </router-link>
           </v-list-item-title>

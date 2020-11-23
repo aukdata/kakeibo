@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
+import NotFound from '../views/NotFound.vue';
 import Home from '../views/Home.vue';
 
 Vue.use(VueRouter);
@@ -16,7 +17,7 @@ const routes: Array<RouteConfig> = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: '/transactions',
+    path: '/transactions/:boxId',
     name: 'Transactions',
     component: () => import(/* webpackChunkName: "transactions" */ '../views/Transactions.vue')
   },
