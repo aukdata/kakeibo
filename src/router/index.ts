@@ -20,6 +20,11 @@ const routes: Array<RouteConfig> = [
     name: 'Transactions',
     component: () => import(/* webpackChunkName: "transactions" */ '../views/Transactions.vue')
   },
+  {
+    path: '/*',
+    name: 'NotFound',
+    component: NotFound
+  },
 ];
 
 const router = new VueRouter({
