@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.f7b7bef0d3676a6ebb9845f87fafce37.js"
+  "/precache-manifest.4e6b1f3852e006bd657d1b75c9b3d4fc.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "kakeibo"});
