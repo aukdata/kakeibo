@@ -15,8 +15,10 @@ type TransactionCategory = {
   name: string;
 };
 
+type TransactionEntryId = string;
 
 type TransactionEntry = {
+  id: TransactionEntryId;
   createdAt: Date;
   updatedAt: Date;
   amount: number;
