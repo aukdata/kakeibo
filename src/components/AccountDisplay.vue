@@ -5,7 +5,7 @@
   >
     <v-divider></v-divider>
 
-    <v-card-titile>
+    <v-card-title>
       <v-avatar class="mt-4 ml-4">
         <img
           v-if="$store.state.account.avatarURL"
@@ -16,7 +16,7 @@
       <span class="mt-100 ml-2">
         {{ $store.state.account.displayName }}
       </span>
-    </v-card-titile>
+    </v-card-title>
 
     <v-card-subtitle class="mt-n2">
       {{ $store.state.account.email }}
