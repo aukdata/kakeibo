@@ -1,5 +1,13 @@
 <template>
   <v-app>
+    <v-dialog
+      :value="!$store.state.account"
+      persistent
+      max-width="400px"
+    >
+      <SignInForm></SignInForm>
+    </v-dialog>
+
     <v-system-bar
       app
       color="primary"
@@ -25,6 +33,10 @@
           </v-list-item-title>
         </v-list-item>
       </v-list>
+
+      <template v-slot:append>
+        <AccountDisplay></AccountDisplay>
+      </template>
     </v-navigation-drawer>
 
     <v-main>
@@ -37,9 +49,14 @@
 <script lang="ts">
 import Vue from 'vue';
 import { Component } from 'vue-property-decorator';
+import SignInForm from '@/components/SignInForm.vue'
+import AccountDisplay from '@/components/AccountDisplay.vue'
 
 @Component({
-  components: {}
+  components: {
+    SignInForm,
+    AccountDisplay,
+  }
 })
 export default class App extends Vue {}
 

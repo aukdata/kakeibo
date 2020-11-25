@@ -26,8 +26,17 @@ type TransactionEntry = {
 };
 
 
+type AccountInfo = {
+  uid: string;
+  displayName: string;
+  email: string;
+  avatarURL?: string;
+}
+
+
 type AppData = {
   entries: TransactionEntry[];
   categories: TransactionCategory[];
   boxes: Box[];
+  account?: AccountInfo;
 };

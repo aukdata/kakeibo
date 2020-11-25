@@ -28,3 +28,16 @@ const options = {
 };
 
 firebase.initializeApp(options);
+
+firebase.auth().onAuthStateChanged(user => {
+  if (user) {
+    store.state.account = {
+      uid: user.uid,
+      displayName: user.displayName ?? user.email ?? "N/A",
+      email: user.email ?? "N/A",
+      avatarURL: user.photoURL ?? undefined,
+    }
+  } else {
+    store.state.account = undefined;
+  }
+});

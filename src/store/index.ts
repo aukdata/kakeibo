@@ -19,6 +19,7 @@ export default new Vuex.Store<AppData>({
       { id: "yuucho", name: "ゆうちょ口座", amount: 30000 },
       { id: "daikyo", name: "大協口座", amount: 30000 },
     ],
+    account: undefined,
   },
   mutations: {
   },
