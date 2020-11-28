@@ -37,7 +37,11 @@ firebase.auth().onAuthStateChanged(user => {
       email: user.email ?? "N/A",
       avatarURL: user.photoURL ?? undefined,
     }
+
+    store.dispatch("loadBoxes", { uid: user.uid })
+    store.dispatch("loadCategories", { uid: user.uid })
   } else {
     store.state.account = undefined;
+    store.state.boxes = [];
   }
 });

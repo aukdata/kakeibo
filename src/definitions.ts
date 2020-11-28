@@ -1,12 +1,4 @@
 
-type BoxId = string;
-
-type Box = {
-  id: BoxId;
-  name: string;
-  amount: number;
-};
-
 
 type TransactionCategoryId = string;
 
@@ -21,10 +13,20 @@ type TransactionEntry = {
   id: TransactionEntryId;
   createdAt: Date;
   updatedAt: Date;
+  name: string;
   amount: number;
   category: TransactionCategoryId;
-  from?: BoxId;
   to?: BoxId;
+};
+
+
+type BoxId = string;
+
+type Box = {
+  id: BoxId;
+  name: string;
+  balance: number;
+  entries: TransactionEntry[];
 };
 
 
@@ -37,7 +39,6 @@ type AccountInfo = {
 
 
 type AppData = {
-  entries: TransactionEntry[];
   categories: TransactionCategory[];
   boxes: Box[];
   account?: AccountInfo;
